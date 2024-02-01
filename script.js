@@ -1,5 +1,7 @@
 function clearScreen(){
-    document.getElementById("result").value ="";
+    // var a = document.getElementById("result").value;
+    // var b = a.clear();
+    document.getElementById("result").value = "";
 }
 
 function display(value){
