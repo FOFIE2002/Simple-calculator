@@ -1,11 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 
+:root.dark {
+    --color-base-bg: black;
+    --color-base-cal: #271346;
+    --color-base-text: white;
+    --color-editor-bg: bisque;
+    --color-b-bg: #fb0066;
+    --color-btn-bg: #64278f;
+    --color-btn-active: #e5e5e5;
+}
+:root.light {
+    --color-base-bg: black;
+    --color-base-cal: bisque;
+    --color-base-text: black;
+    --color-editor-bg: rgb(214, 206, 206);
+    --color-b-bg: #fb0066;
+    --color-btn-bg: #9657c3;
+}
+
+body{
+    color: var(--color-base-text);
+}
 .calculator{
     padding: 10px;
     border-radius: 5px;
     height: 400px;
     margin: auto;
-    background-color: #271346;
+    background-color: var(--color-base-cal);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 /* .heading
@@ -17,21 +38,21 @@
 } */
 .display{  
     font-family: "PT Mono", monospace;
-    background-color: bisque;
+    background-color: var(--color-editor-bg);
     border: solid black 0.5px;
-    color: black;
+    color: var(--color-base-bg);
     border-radius: 5px;
     width: 100%;
     height: 65%;
 }
 #btn{
-    background-color: #fb0066;
+    background-color: var(--color-b-bg);
 }
-input[type=button]{
+input[type=button], button{
     font-family: "PT Mono", monospace;
-    color: white;
-    background-color: #64278f;
-    border: solid black 0.5px;
+    color: var(--color-base-text);
+    background-color: var(--color-btn-bg);
+    border: solid var(--color-base-bg) 0.5px;
     width: 100%;
     border-radius: 5px;
     height: 70%;
@@ -39,7 +60,7 @@ input[type=button]{
     cursor: pointer;
     padding: 10px;
 }
-input:active[type=button] {
+input:active[type=button]{
     background: #e5e5e5;
     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
