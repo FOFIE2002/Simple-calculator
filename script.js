@@ -13,21 +13,6 @@
 //     var b = eval(a);
 //     document.getElementById("result").value = b;
 // }
-// function backspace(){
-//     let display = document.getElementById('display');
-//     display.value = display.value.slice(0, -1);
-// }
-
-// function factorial(num) {
-//     if (num === 0 || num === 1) {
-//       return 1;
-//     } else {
-//       return num * factorial(num - 1);
-//     }
-//   }
-//   function appendFunction(func) {
-//     document.getElementById('display').value += func;
-//   }
   
 function clearScreen() {
     document.getElementById("result").value = "";
@@ -35,6 +20,11 @@ function clearScreen() {
 
 function display(value) {
     document.getElementById("result").value += value;
+}
+
+function backspace() {
+    var currentInput = document.getElementById("result").value;
+    document.getElementById("result").value = currentInput.slice(0, -1);
 }
 
 function calculate() {
@@ -47,32 +37,28 @@ function calculate() {
     input = input.replace(/ln/g, 'Math.log'); // Replace ln with Math.log
 
     // Handle factorial
-    input = input.replace(/!/g, 'factorial');
+    input = input.replace(/(\d+)!/g, function(match, number) {
+        return factorial(parseInt(number));
+    });
 
     try {
-        // Evaluate the expression after handling custom operations
-        var result = eval(input);
-
-        // If the result is a function, execute it using the Function constructor
-        if (typeof result === 'function') {
-            document.getElementById("result").value = new Function('return ' + result)();
-        } else {
-            document.getElementById("result").value = result;
-        }
+        const result = math.evaluate(input);
+        document.getElementById("result").value = result;
     } catch (error) {
-        document.getElementById("result").value = "Error";
+        document.getElementById("result").value = error.message;
     }
 }
 
-function backspace() {
-    var currentInput = document.getElementById("result").value;
-    document.getElementById("result").value = currentInput.slice(0, -1);
-}
-
 function factorial(num) {
+    // Ensure non-negative input
+    if (num < 0) {
+        throw new Error("Factorial is not defined for negative numbers");
+    }
+
     if (num === 0 || num === 1) {
         return 1;
     } else {
         return num * factorial(num - 1);
     }
 }
+ 
