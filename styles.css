@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 
 .calculator{
     padding: 10px;
@@ -15,8 +15,8 @@
     font-size: 25px;
     text-transform: uppercase;
 } */
-.display{
-    font-family: 'Orbitron', sans-serif;
+.display{  
+    font-family: "PT Mono", monospace;
     background-color: bisque;
     border: solid black 0.5px;
     color: black;
@@ -28,7 +28,7 @@
     background-color: #fb0066;
 }
 input[type=button]{
-    font-family: 'Orbitron', sans-serif;
+    font-family: "PT Mono", monospace;
     color: white;
     background-color: #64278f;
     border: solid black 0.5px;
@@ -37,6 +37,7 @@ input[type=button]{
     height: 70%;
     outline: none;
     cursor: pointer;
+    padding: 10px;
 }
 input:active[type=button] {
     background: #e5e5e5;

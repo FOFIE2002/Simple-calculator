@@ -6,6 +6,7 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.3.0/math.min.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -22,7 +23,7 @@
                 <td><input type="button" value="x&#94;" onclick="display('&#94;')"></td>
                 <td><input type="button" value="log" onclick="display('log')"></td>
                 <td><input type="button" value="ln" onclick="display('ln')"></td>
-                <td><input type="button" value="X" onclick="backspace()"></td>
+                <td><input type="button" value="X" onclick="backspace()" id="btn"></td>
             </tr>
             <tr>
                 <!-- square root -->

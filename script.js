@@ -52,7 +52,7 @@ function calculate() {
 function factorial(num) {
     // Ensure non-negative input
     if (num < 0) {
-        throw new Error("Factorial is not defined for negative numbers");
+        throw new Error("input positive num");
     }
 
     if (num === 0 || num === 1) {
